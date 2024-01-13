@@ -1,7 +1,7 @@
 package Test_Demo;
 
 import org.json.simple.JSONObject;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
 
@@ -63,11 +63,33 @@ public class Get_Post_Method {
          .then()
          .statusCode(201);
 		
+		}
+	@Test
+	public void postMethod() {
+		
+	JSONObject reqres = new JSONObject();
+	reqres.put(reqres, reqres);
+	reqres.put(reqres, reqres);
+	
+	System.out.println(reqres.toJSONString());
+	
+	baseURI= "https://reqres.in/api";
+	given().header("content-tye","application/json")
+	.accept(ContentType.JSON)
+	.when()
+	.post("Users")
+	.then()
+	.statusCode(201);
+		
+		
+		
+		
 		
 		
 		
 		
 		
 	}
+	
 	
 }
